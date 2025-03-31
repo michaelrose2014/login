@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <style>
+        </style>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <ul>
+            <li><a href="https://www.shchackim.co.il/" target="_blank">אתר שחקים</a></li>
+            <li><a href="https://www.virustotal.com/gui/" target="_blank">סורק וירוסים</a></li>
+            <li><a href="https://www.security.org/how-secure-is-my-password/" target="_blank">בדיקת חוזק סיסמא</a></li>
+            <li><a href="https://www.youtube.com/watch?v=SkgTxQm9DWM" target="_blank">הסרטון הכי טוב ביוטיוב</a></li>
+            <li><a href="https://www.internetlivestats.com/" target="_blank">סטטיסטיקות על האינטרנט</a></li>
+          </ul>
+		  
+		  
+          
+          <div class="container">
+            <form id="form">
+                    <h1>התחברות לאתר</h1>
+                    <div class="question">
+						<label>שם משתמש</label>
+						<input type="text" id="userName" placeholder="הכנס שם משתמש"/>
+                    </div>
+                    <div class="question">
+						<label>סיסמא</label>
+						<input type="password" id="password" placeholder="הכנס סיסמא"/>
+                    </div>
+					<br>
+                    <input type="button" value="login" id="btn" class="btn-red">
+            </form>
+			<h2 id="heading"></h2>
+			
+          </div>
+		  
+		  <script>
+              const btn = document.getElementById('btn');
+              const site_userName = localStorage.getItem('user')
+              const site_password = localStorage.getItem('password')
+              btn.addEventListener("click", () => {
+				const user = document.querySelector('#userName').value;
+                const password = document.querySelector('#password').value;
+                if (user == site_userName && password == site_password) {
+					alert("its a win!!!!!");
+					const form = document.getElementById('form');
+					form.style.display = 'none';
+					const heading = document.getElementById('heading');
+					heading.innerHTML = 'ברוך הבא ' + site_userName
+					heading.style.display = 'block'
+                }
+                else {
+					alert("its a lose!!!!!!");
+                }
+              });
+          </script>
+    </body>
+</html>
